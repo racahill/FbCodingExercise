@@ -99,7 +99,7 @@ namespace Finbourne.Caching
         // Send notification to user. 
         private string SendNotification(object key, CacheItem? value, string message)
         {
-            //TODO: Construct message with key, object type and message
+            //TODO: Construct message with key, object type and message and present via in code notification object. For now on console.
             Console.WriteLine("Notification Sent: " + message );
 
             return message;
