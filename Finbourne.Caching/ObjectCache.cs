@@ -29,28 +29,8 @@ namespace Finbourne.Caching
         // Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concurrently. Will contain an arbitary set of objects.
         private ConcurrentDictionary<object, CacheItem> concurrentDictionary = new ConcurrentDictionary<object, CacheItem>();
         
-        //This variable is going to store the Singleton Instance
-        //Initializing the Variable at the time of class start-up 
-        //and make it ready to be used in the Future
-        /* private static readonly ObjectCache singletonInstance = new ObjectCache(); */
-        
-        //The following Static Method is going to return the Singleton Instance
-        //This is Thread-Safe as it uses Eager Loading
-        /* public static ObjectCache GetInstance()
-        {
-            return singletonInstance;
-        }*/
-
-        //Constructor needs to be Private in order to restrict 
-        //class instantiation from Outside of this class
-        /*private ObjectCache()
-        {
-            Console.WriteLine("SingletonCache Instance Created");
-        }*/
-        
+       
         //The following methods can be accessed from outside of the class by using the Singleton Instance
-
-        //This method is used to add a Key-Value Pair into the Cache
         public bool AddOrUpdate(object key, CacheItem value)
         {
             //Check cache limit and remove/evict item with oldest LastUpdated value of CacheItem
